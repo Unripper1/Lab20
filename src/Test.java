@@ -67,32 +67,14 @@ public class Test {
         while (scf.hasNext()) {
             int k = 0;
             String word = scf.next();
-            word=word.replace(",","");
-            word=word.replace(".","");
-            word=word.replace("!","");
-            word=word.replace("?","");
-            word=word.replace(" ","");
-            word=word.replace(";","");
-            word=word.replace(":","");
-            word=word.replace("«","");
-            word=word.replace("»","");
-            word=word.replace("[","");
-            word=word.replace("]","");
-            word=word.replace("1","");
-            word=word.replace("2","");
-            word=word.replace("3","");
-            word=word.replace("4","");
-            word=word.replace("5","");
-            word=word.replace("6","");
-            word=word.replace("7","");
-            word=word.replace("8","");
-            word=word.replace("9","");
-            word=word.replace("0","");
-            word=word.replace(")","");
-            word=word.replace("(","");
-            word=word.replace("[ ,-","");
             word=word.toLowerCase();
-            //System.out.println(scf.next());
+            for(int j=0;j<word.length();j++){
+                if(!Character.isLetter(word.charAt(j))){
+                    word=word.replace(Character.toString(word.charAt(j)),"");
+                    j--;
+                }
+
+            }
             for (int i = 0; i < N; i++) {
                 if (words[i].equals(word)){
                     index[i]++;
